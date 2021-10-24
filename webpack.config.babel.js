@@ -3,7 +3,8 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess';
 
-const config = ({
+const config = (env) => ({
+  mode: env.production ? 'production' : 'development',
   entry: './src/index.ts',
   output: {
     path: path.join(__dirname, 'deploy'),
@@ -22,6 +23,9 @@ const config = ({
           {
             loader: 'svelte-loader',
             options: {
+              compilerOptions: {
+                dev: !env.production,
+              },
               preprocess: sveltePreprocess({}),
             },
           },

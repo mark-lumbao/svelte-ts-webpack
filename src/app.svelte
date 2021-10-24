@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import Button from 'src/components/button.svelte';
 
   let show: boolean = true;
 
@@ -23,10 +24,10 @@
     <br />
     and Webpack
   </h1>
-  <button on:click={toggle}>
+  <Button on:click={toggle}>
     {show ? 'Hide' : 'Show'}
     logo
-  </button>
+  </Button>
 </main>
 
 <style>
@@ -43,22 +44,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-  }
-  button {
-    color: white;
-    background-color: #ff3e00;
-    opacity: 0.8;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.2rem;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    font-family: 'Roboto Mono', monospace;
-  }
-  button:hover {
-    font-weight: bold;
-    font-size: 1.1rem;
-    opacity: 1;
   }
   img.logo {
     max-width: 10rem;

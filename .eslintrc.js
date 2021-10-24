@@ -19,7 +19,14 @@ module.exports = {
     // https://github.com/sveltejs/eslint-plugin-svelte3
     'svelte3/typescript': true, // load TypeScript as peer dependency
     // https://www.npmjs.com/package/eslint-import-resolver-webpack
-    'import/resolver': 'webpack',
+    'import/resolver': {
+      webpack: {
+        config: 'webpack.config.babel.js',
+        env: {
+          production: true,
+        },
+      },
+    },
   },
   overrides: [
     {

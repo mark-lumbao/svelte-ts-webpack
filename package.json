@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && serve -s deploy",
-    "hot": "webpack serve --hot --progress --mode development",
-    "build": "webpack --mode development",
-    "svelte-check": "svelte-check --watch"
+    "hot": "webpack serve --hot --progress",
+    "build": "webpack --progress --env production",
+    "svelte-check": "svelte-check --watch",
+    "lint": "eslint --ext .js,.ts,.svelte .",
+    "lint:fix": "eslint --ext .js,.ts,.svelte . --fix"
   },
   "keywords": [],
   "author": "Mark Anthony Lumbao",
