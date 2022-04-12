@@ -13,24 +13,24 @@
 <Route path="/*">
   <main>
     <Route path="/">
-        {#if show}
-          <img
-            in:fade
-            out:fade
-            class="logo"
-            alt="svelte-logo"
-            src="/assets/svelte-logo.png"
-          />
-        {/if}
-        <h1>
-          Svelte in Typescript
-          <br />
-          and Webpack
-        </h1>
-        <Button on:click={toggle}>
-          {show ? 'Hide' : 'Show'}
-          logo
-        </Button>
+      {#if show}
+        <img
+          in:fade
+          out:fade
+          class="logo"
+          alt="svelte-logo"
+          src="/assets/svelte-logo.png"
+        />
+      {/if}
+      <h1>
+        Svelte in Typescript
+        <br />
+        and Webpack
+      </h1>
+      <Button on:click={toggle}>
+        {show ? 'Hide' : 'Show'}
+        logo
+      </Button>
     </Route>
     <Route fallback>Page Not Found!</Route>
   </main>

@@ -1,28 +1,28 @@
-import path from "path";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import CopyPlugin from "copy-webpack-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { sveltePreprocess } from "svelte-preprocess/dist/autoProcess";
+import path from 'path';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { sveltePreprocess } from 'svelte-preprocess/dist/autoProcess';
 
 const config = (env) => ({
-  mode: env.production ? "production" : "development",
-  entry: "./src/index.ts",
+  mode: env.production ? 'production' : 'development',
+  entry: './src/index.ts',
   output: {
-    path: path.join(__dirname, "deploy"),
-    filename: "[fullhash].bundle.js",
+    path: path.join(__dirname, 'deploy'),
+    filename: '[fullhash].bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(j|t)s$/,
-        use: "babel-loader",
+        use: 'babel-loader',
       },
       {
         test: /\.svelte$/,
         use: [
-          { loader: "babel-loader" },
+          { loader: 'babel-loader' },
           {
-            loader: "svelte-loader",
+            loader: 'svelte-loader',
             options: {
               compilerOptions: {
                 dev: !env.production,
@@ -45,23 +45,23 @@ const config = (env) => ({
     historyApiFallback: true,
   },
   resolve: {
-    modules: ["node_modules", path.resolve(__dirname, ".")],
+    modules: ['node_modules', path.resolve(__dirname, '.')],
     alias: {
-      svelte: path.resolve("node_modules", "svelte"),
+      svelte: path.resolve('node_modules', 'svelte'),
     },
-    extensions: [".mjs", ".js", ".ts", ".svelte"],
-    mainFields: ["svelte", "browser", "module", "main"],
+    extensions: ['.mjs', '.js', '.ts', '.svelte'],
+    mainFields: ['svelte', 'browser', 'module', 'main'],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "template/index.html"),
+      template: path.join(__dirname, 'template/index.html'),
     }),
     new CopyPlugin({
       patterns: [
         {
-          from: "./src/assets/",
-          to: "./assets",
+          from: './src/assets/',
+          to: './assets',
         },
       ],
     }),
