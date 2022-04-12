@@ -16,7 +16,7 @@
       out:fade
       class="logo"
       alt="svelte-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
+      src="/assets/svelte-logo.png"
     />
   {/if}
   <h1>
