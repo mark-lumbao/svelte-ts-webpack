@@ -41,6 +41,9 @@ const config = (env) => ({
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   resolve: {
     modules: ["node_modules", path.resolve(__dirname, ".")],
     alias: {
