@@ -30,6 +30,18 @@ module.exports = {
     },
   ],
   rules: {
+    // https://stackoverflow.com/questions/59265981/typescript-eslint-missing-file-extension-ts-import-extensions
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'import/first': 0, // https://www.cloudhadoop.com/reactjs-javascript-import-first/
     'import/prefer-default-export': 0,
     'import/no-mutable-exports': 0,
     indent: ['error', 2],
