@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Route } from 'tinro';
   import { fade } from 'svelte/transition';
-  import Button from 'src/components/button.svelte';
+  import Button from 'components/button.svelte';
 
   let show: boolean = true;
 

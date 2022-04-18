@@ -56,7 +56,7 @@ const config = (env) => ({
     historyApiFallback: true,
   },
   resolve: {
-    modules: ['node_modules', path.resolve(__dirname, '.')],
+    modules: ['node_modules', path.resolve(__dirname, 'src')],
     alias: {
       svelte: path.resolve('node_modules', 'svelte'),
     },
